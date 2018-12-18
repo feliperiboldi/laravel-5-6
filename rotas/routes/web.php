@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
+});
+
+Route::get('/ola', function() {
+	return "<h1>Olá Mundo!</h1>";
 });
