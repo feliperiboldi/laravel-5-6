@@ -18,3 +18,18 @@ Route::get('/', function () {
 Route::get('/ola', function() {
 	return "<h1>Olá Mundo!</h1>";
 });
+
+Route::get('/nome/{nome}', function($nome) {
+	return "<h1>Olá, meu nome é: ".ucfirst($nome)."</h1>";
+});
+
+Route::get('/tabuada/{n}', function ($numero) {
+	if(is_integer($numero)) {
+		for($i = 0; $i <= 10; $i++) {
+			echo $numero * $i."<br/>";
+		}
+		return "O número escolhido para a taboada foi ".$numero;
+	} else {
+		return "Você precisa digitar um número Inteiro!";
+	}
+});
