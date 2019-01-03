@@ -68,3 +68,27 @@ Route::view('/viewnome', 'hellonome',
 Route::get('/hellonome/{nome}/{sobrenome}', function($nome, $sobrenome) {
 	return view('hellonome', ['nome' => $nome, 'sobrenome' => $sobrenome]);
 });
+
+Route::get('/rest/get', function() {
+	return "Hello {GET}";
+});
+
+Route::post('/rest/post', function() {
+	return "Hello {POST}";
+});
+
+Route::delete('/rest/delete', function() {
+	return "Hello {DELETE}";
+});
+
+Route::put('/rest/put', function() {
+	return "Hello {PUT}";
+});
+
+Route::patch('/rest/patch', function() {
+	return "Hello {PATCH}";
+});
+
+Route::options('/rest/options', function() {
+	return "Hello {OPTIONS}";
+});
