@@ -112,3 +112,23 @@ Route::match(['get', 'post'], '/rest/match', function() {
 Route::any('/rest/any', function() {
 	return "Hello All";
 });
+
+// Nomeando Rotas
+
+Route::get('/produtosLista', function() {
+	echo "<h1>Produtos</h1>";
+	echo "<ol>";
+	echo "<li>Apple Macbook Pro</li>";
+	echo "<li>Apple Watch Series 4</li>";
+	echo "<li>Apple iPhone XS Max</li>";
+	echo "</ol>";
+})->name('meusProdutos');
+
+Route::get('/linkprodutos', function() {
+	$url = route('meusProdutos');
+	echo "<a href=\"".$url."\">Meus Produtos</a>";
+});
+
+Route::get('/redirecionarProdutos', function() {
+	return redirect()->route('meusProdutos');
+});
