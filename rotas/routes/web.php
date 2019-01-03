@@ -60,6 +60,8 @@ Route::prefix("app")->group(function() {
 	});
 });
 
+// Redirecionamento de Rotas
+
 Route::redirect('/aqui', '/ola', 301);
 
 Route::view('/hello', 'hello');
@@ -70,6 +72,8 @@ Route::view('/viewnome', 'hellonome',
 Route::get('/hellonome/{nome}/{sobrenome}', function($nome, $sobrenome) {
 	return view('hellonome', ['nome' => $nome, 'sobrenome' => $sobrenome]);
 });
+
+// Métodos HTTP
 
 Route::get('/rest/get', function() {
 	return "Hello {GET}";
@@ -97,5 +101,14 @@ Route::options('/rest/options', function() {
 
 Route::post('/rest/imprimir', function(Request $requisicao) {
 	$nome = $requisicao->input('nome');
-	return "Hello $nome";
+	$idade = $requisicao->input('idade');
+	return "Hello".$nome." Sua idade é: ".$idade;
+});
+
+Route::match(['get', 'post'], '/rest/match', function() {
+	return "Hello";
+});
+
+Route::any('/rest/any', function() {
+	return "Hello All";
 });
