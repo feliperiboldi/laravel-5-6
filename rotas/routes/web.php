@@ -11,6 +11,8 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 Route::get('/', function () {
 	return view('welcome');
 });
@@ -91,4 +93,9 @@ Route::patch('/rest/patch', function() {
 
 Route::options('/rest/options', function() {
 	return "Hello {OPTIONS}";
+});
+
+Route::post('/rest/imprimir', function(Request $requisicao) {
+	$nome = $requisicao->input('nome');
+	return "Hello $nome";
 });
