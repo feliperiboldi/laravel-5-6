@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/nome', 'MeuControlador@getNome');
+
+// Passando Parâmetros pela Rota
+
+Route::get('/nome/{id}', 'MeuControlador@getNomeById');
