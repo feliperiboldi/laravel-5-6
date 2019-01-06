@@ -66,7 +66,7 @@ class ClienteConrolador extends Controller
      */
     public function edit($id)
     {
-        //
+        return "Formulário para editar o Cliente com o ID ".$id;
     }
 
     /**
@@ -78,7 +78,11 @@ class ClienteConrolador extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $s = "Atualizar Cliente com o ID: ".$id;
+        $s .= "Nome: ".$request->input('nome')." e ";
+        $s .= "Idade: ".$request->input('idade');
+
+        return response($s, 201);
     }
 
     /**
@@ -89,6 +93,6 @@ class ClienteConrolador extends Controller
      */
     public function destroy($id)
     {
-        //
+        return response("Apagado Cliente com o ID $id", 200);
     }
 }
