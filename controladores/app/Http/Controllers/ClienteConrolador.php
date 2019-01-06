@@ -13,7 +13,7 @@ class ClienteConrolador extends Controller
      */
     public function index()
     {
-        //
+        return "Lista de Todos os Clientes";
     }
 
     /**
@@ -23,7 +23,7 @@ class ClienteConrolador extends Controller
      */
     public function create()
     {
-        //
+        return "Formulário para Cadastrar Novo Cliente";
     }
 
     /**
@@ -34,7 +34,11 @@ class ClienteConrolador extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $s = "Armazenar: ";
+        $s .= "Nome: ".$request->input('nome')." e ";
+        $s .= "Idade: ".$request->input('idade');
+
+        return response($s, 201);
     }
 
     /**
@@ -45,7 +49,13 @@ class ClienteConrolador extends Controller
      */
     public function show($id)
     {
-        //
+        $v = ["Felipe", "João", "Glaucio", "Daniel"];
+
+        if($id >= 0 && $id < count($v)) {
+            return $v[$id];
+        } else {
+            return "Nenhum ID foi encontrado";
+        }
     }
 
     /**
