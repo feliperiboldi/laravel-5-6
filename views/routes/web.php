@@ -38,3 +38,12 @@ Route::get('/nomes2/{nome}/{sobrenome}', function($nome, $sobrenome) {
 
 	return view('minhaview', compact('nome', 'sobrenome'));
 });
+
+// Verificando se uma view existe
+Route::get('/nome/{nome}', function($nome) {
+	if(View::exists('nome')) {
+		return view('nome', compact('nome'));	
+	} else {
+		return view('erro');
+	}
+});
