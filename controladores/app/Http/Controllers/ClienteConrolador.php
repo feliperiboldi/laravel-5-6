@@ -95,4 +95,9 @@ class ClienteConrolador extends Controller
     {
         return response("Apagado Cliente com o ID $id", 200);
     }
+
+    public function requisitar(Request $request)
+    {
+        echo "Nome: ".$request->input('nome');
+    }
 }

@@ -24,3 +24,5 @@ Route::get('/nome/{id}', 'MeuControlador@getNomeById');
 // Requisições HTTP
 
 Route::resource('/cliente', 'ClienteConrolador');
+
+Route::post('/cliente/requisitar', 'ClienteConrolador@requisitar');
