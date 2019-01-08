@@ -47,3 +47,8 @@ Route::get('/nome/{nome}', function($nome) {
 		return view('erro');
 	}
 });
+
+// Templates para views
+Route::get('/filho', function() {
+	return view('filho');
+});
