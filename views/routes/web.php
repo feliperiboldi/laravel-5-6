@@ -52,3 +52,8 @@ Route::get('/nome/{nome}', function($nome) {
 Route::get('/filho', function() {
 	return view('filho');
 });
+
+// Bootstrap 4
+Route::get('/pagina', function() {
+	return view('pagina');
+});
