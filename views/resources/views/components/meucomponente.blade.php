@@ -1,5 +1,7 @@
 <div class="container">	
-	<div class="alert alert-success" role="alert">
+	<div class="alert alert-{{$tipo}}" role="alert">
 		{{$slot}}
+
+		{{$titulo}}
 	</div>
 </div>
