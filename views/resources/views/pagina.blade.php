@@ -13,6 +13,12 @@
 		</div>
 	</div>
 
+	<hr>
+
+	@component('components.meucomponente')
+		<strong>Erro</strong> Sua mensagem de Errro.
+	@endcomponent
+
 	<script src="{{ asset('js/app.js')}}"></script>
 </body>
 </html>
